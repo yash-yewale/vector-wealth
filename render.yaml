@@ -30,7 +30,3 @@ services:
         value: "true"
       - key: RSS_ENABLED
         value: "true"
-    disk:
-      name: vector-wealth-data
-      mountPath: /data
-      sizeGB: 1

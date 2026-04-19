@@ -15,12 +15,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend source code
 COPY backend/ .
 
-# Create persistent data directory
-RUN mkdir -p /data/vector_wealth_db
+# Create data directory inside container
+RUN mkdir -p /app/vector_wealth_db
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
-ENV VECTOR_WEALTH_DB_PATH=/data/vector_wealth_db
+ENV VECTOR_WEALTH_DB_PATH=/app/vector_wealth_db
 
 # Expose port
 EXPOSE 10000
