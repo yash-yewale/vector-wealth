@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+frontend/
+.env
+.git/
+*.md
+data/
+backend/vector_wealth_db/
+backend/__pycache__/
+backend/.pytest_cache/
+backend/test_*.py
+backend/tests/

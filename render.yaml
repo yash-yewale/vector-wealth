@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: vector-wealth-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: singapore
+    plan: free
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GROQ_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: NEWSAPI_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: LIVE_NEWS_ENABLED
+        value: "true"
+      - key: LIVE_NEWS_PROVIDER
+        value: newsapi,rss
+      - key: USE_GENAI_ANALYSIS
+        value: "true"
+      - key: USE_SECTOR_ROTATION
+        value: "true"
+      - key: USE_INDIA_DOMAINS
+        value: "true"
+      - key: RSS_ENABLED
+        value: "true"
+    disk:
+      name: vector-wealth-data
+      mountPath: /data
+      sizeGB: 1
